@@ -12,7 +12,7 @@ This interactive widget will either reside on Codingscape's [Services Page](http
 
 ## When
 
-This will be launched by May 27th, 2021.
+This will be launched by May 27th, 2021 with a total of four engineering build days (25 hours).
 
 ## Who
 
@@ -26,7 +26,7 @@ Available in [Codingscape Sprints](https://trello.com/b/oHExnmoN/codingscape-spr
 
 - View differentiators by value
 - View elaborations of differentiators on hover
-- Filter differentiators of relevance
+- Filter differentiators of relevance (stretch goal)
 - Print / Save customized value matrix to share internally
 
 ## Framework
