@@ -55,6 +55,6 @@ Allowing interaction with cross-technology interfaces, given both speak the same
 
 TBD image/pdf compiler & share package
 
-## Screenshot
+## Screenshot (static unstyled spreadsheet version)
 
-![Value Matrix (static unstyled spreadsheet version)](/value-matrix.png)
+![Value Matrix](/value-matrix.png)
