@@ -49,8 +49,12 @@ Allowing interaction with cross-technology interfaces, given both speak the same
 
 ## Libraries & Packages
 
-[abc)]()
+[Material UI Components (responsiveness & CSS)](https://material-ui.com/)
+
+[Material UI Grid](https://material-ui.com/components/grid/)
+
+TBD image/pdf compiler & share package
 
 ## Screenshot
 
-![abc]()
+![Value Matrix (static unstyled spreadsheet version)](/value-matrix.png)
