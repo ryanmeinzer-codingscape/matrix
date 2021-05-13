@@ -28,7 +28,9 @@ Available in [Codingscape Sprints](https://trello.com/b/oHExnmoN/codingscape-spr
 - View elaborations of differentiators on hover
 - Filter differentiators of relevance (stretch goal with state)
 - Dynamic data (stretch goal with state)
-- Print / Save value matrix to share internally (customized value matrix - stretch goal with state)
+- Print / Save / Email value matrix to share internally (customized value matrix - stretch goal with state)
+- On mobile, view differentiators by value and elaborations on hover (stretch with responsiveness)
+- On mobile, Save / Email value matrix to share internally (stretch goal with state and responsiveness)
 
 ## Framework
 
