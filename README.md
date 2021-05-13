@@ -26,8 +26,8 @@ Available in [Codingscape Sprints](https://trello.com/b/oHExnmoN/codingscape-spr
 
 - View differentiators by value
 - View elaborations of differentiators on hover
-- Filter differentiators of relevance (stretch goal)
-- Print / Save value matrix to share internally (customized value matrix - stretch goal)
+- Filter differentiators of relevance (stretch goal with state)
+- Print / Save value matrix to share internally (customized value matrix - stretch goal with state)
 
 ## Framework
 
@@ -39,7 +39,7 @@ For a highly interactive user interface in a Single Page Application (SPA) throu
 
 https://www.figma.com/file/nEEe5M7Rl4awkPDgoMYjg0/Codingscape?node-id=632%3A2404
 
-## Wordpress Headless CMS
+## Wordpress Headless CMS or [ReactPress](https://rockiger.com/en/easily-embed-react-apps-into-wordpress-with-reactpress-plugin/)
 
 As a generic content management system irrespective of the technology used to build the front-end (ie React).
 
