@@ -54,7 +54,11 @@ Allowing interaction with cross-technology interfaces, given both speak the same
 
 [Material UI Components (responsiveness & CSS)](https://material-ui.com/)
 
-[Material UI Grid](https://material-ui.com/components/grid/)
+[Material UI Data Grid Component](https://material-ui.com/components/data-grid/export/)
+
+[CSS Grid Layout (potentially)](https://www.w3schools.com/css/css_grid.asp)
+
+[React Grid System (potentially)](https://www.npmjs.com/package/react-grid-system)
 
 TBD image/pdf compiler & share package
 
