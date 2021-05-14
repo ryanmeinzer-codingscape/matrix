@@ -54,7 +54,7 @@ Allowing interaction with cross-technology interfaces, given both speak the same
 
 [Material UI Components (responsiveness & CSS)](https://material-ui.com/)
 
-[Material UI Data Grid Component](https://material-ui.com/components/data-grid/export/)
+[Material UI Data Grid Component](https://material-ui.com/components/data-grid/)
 
 [CSS Grid Layout (potentially)](https://www.w3schools.com/css/css_grid.asp)
 
