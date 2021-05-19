@@ -1,42 +1,148 @@
 import {DataGrid} from '@material-ui/data-grid'
 
 const columns = [
-    {field: 'id', headerName: 'ID', width: 70},
-    {field: 'firstName', headerName: 'First name', width: 130},
-    {field: 'lastName', headerName: 'Last name', width: 130},
     {
-        field: 'age',
-        headerName: 'Age',
-        type: 'number',
-        width: 90,
+        field: 'id',
+        hide: true,
     },
     {
-        field: 'fullName',
-        headerName: 'Full name',
-        description: 'This column has a value getter and is not sortable.',
-        sortable: false,
-        width: 160,
-        valueGetter: (params) =>
-            `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
+        field: 'valueTitle',
+        headerName: ' ',
+        type: 'string',
+        sortable: 'false',
+        flex: 1
     },
+    {
+        field: 'internalLabs',
+        headerName: 'Internal Labs $$$$$',
+        type: 'boolean',
+        flex: 1
+    },
+    {
+        field: 'largeConsultancies',
+        headerName: 'Large Consultancies $$$$',
+        type: 'boolean',
+        flex: 1
+    },
+    {
+        field: 'codingscape',
+        headerName: 'Codingscape $$$',
+        type: 'boolean',
+        flex: 1
+    },
+    {
+        field: 'nearshoreFirms',
+        headerName: 'Nearshore Firms $$',
+        type: 'boolean',
+        flex: 1
+    },
+    {
+        field: 'offshoreFirms',
+        headerName: 'Offshore Firms $',
+        type: 'boolean',
+        flex: 1
+    }
 ]
 
 const rows = [
-    {id: 1, lastName: 'Snow', firstName: 'Jon', age: 35},
-    {id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42},
-    {id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45},
-    {id: 4, lastName: 'Stark', firstName: 'Arya', age: 16},
-    {id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null},
-    {id: 6, lastName: 'Melisandre', firstName: null, age: 150},
-    {id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44},
-    {id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36},
-    {id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65},
+    {
+        id: 1,
+        valueTitle: 'Quality Software',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
+    {
+        id: 2,
+        valueTitle: 'Fast',
+        internalLabs: true,
+        largeConsultancies: false,
+        codingscape: true,
+        nearshoreFirms: true,
+        offshoreFirms: false
+    },
+    {
+        id: 3,
+        valueTitle: 'Cheap',
+        internalLabs: false,
+        largeConsultancies: false,
+        codingscape: false,
+        nearshoreFirms: true,
+        offshoreFirms: true
+    },
+    {
+        id: 4,
+        valueTitle: 'Senior Software Engineers',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
+    {
+        id: 5,
+        valueTitle: 'Remote First',
+        internalLabs: false,
+        largeConsultancies: false,
+        codingscape: true,
+        nearshoreFirms: true,
+        offshoreFirms: true
+    },
+    {
+        id: 6,
+        valueTitle: 'Direct Access to Engineers',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
+    {
+        id: 7,
+        valueTitle: 'USA Based Team and Working Hours',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
+    {
+        id: 8,
+        valueTitle: 'Technology Match',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: true,
+        offshoreFirms: false
+    },
+    {
+        id: 9,
+        valueTitle: 'Enterprise-Grade',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
+    {
+        id: 10,
+        valueTitle: 'Data Security and Privacy',
+        internalLabs: true,
+        largeConsultancies: true,
+        codingscape: true,
+        nearshoreFirms: false,
+        offshoreFirms: false
+    },
 ]
 
 const AppContainer = () => {
     return (
-        <div style={{height: 400, width: '100%'}}>
-            <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+        <div style={{display: 'flex', height: '100vh'}}>
+            <div style={{flexGrow: 1}}>
+                <DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
+            </div>
         </div>
     )
 }
