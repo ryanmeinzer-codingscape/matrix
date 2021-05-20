@@ -1,4 +1,10 @@
-import {DataGrid, GridToolbar} from '@material-ui/data-grid'
+import {
+    DataGrid,
+    GridToolbarContainer,
+    GridColumnsToolbarButton,
+    GridFilterToolbarButton,
+    GridToolbarExport
+} from '@material-ui/data-grid'
 import Tooltip from '@material-ui/core/Tooltip'
 
 const columns = [
@@ -24,11 +30,14 @@ const columns = [
         sortable: false,
         flex: 1,
         description: "Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.",
-        renderCell: (params) => (
-            <Tooltip title={params.row.internalLabsDescription}>
-                <span>{params.value}</span>
-            </Tooltip>
-        )
+        
+        // ToDo: Decide between the tradeoff of true/false filtering (current) and dicernible export OR tooltips (below)
+        type: 'boolean',
+        // renderCell: (params) => (
+        //     <Tooltip title={params.row.internalLabsDescription}>
+        //         <span>{params.value ? '☑' : '☐'}</span>
+        //     </Tooltip>
+        // )
     },
     {
         field: 'largeConsultancies',
@@ -85,7 +94,7 @@ const rows = [
         id: 1,
         valueTitle: 'Quality Software',
         valueTitleDescription: "Doing quality work is hard. Finding quality developers is difficult. Codingscape's USA based developers are experts at providing high quality development and excellent communication.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: "Large companies often have Lab teams to work on special projects. This is an effective quality strategy for custom software projects but comes at a high cost. Out of reach for all but the largest organizations.",
         largeConsultancies: '☑',
         largeConsultanciesDescription: "Large consulting firms are highly profitable for a reason, they charge A LOT for their expertise and long contract durations.",
@@ -100,7 +109,7 @@ const rows = [
         id: 2,
         valueTitle: 'Fast',
         valueTitleDescription: "Hitting deadlines is vital to any business. Software projects need to be on time and on budget - Codingscape prides ourselves on hitting the deadlines we agree to and getting started on projects fast.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: "Internal labs can move fast once they are setup and operating. Internal labs are often created because the normal engineering organization can't move fast enough.",
         largeConsultancies: '☐',
         largeConsultanciesDescription: "Large Consultancies are not generally a speedy option. They specialize in multi year engagements and it takes a lot of time for their work to come together. There is often a lot of red tape and contractual obligations that slow down the actual start of work.",
@@ -115,7 +124,7 @@ const rows = [
         id: 3,
         valueTitle: 'Cheap',
         valueTitleDescription: "Software development can be a complicated and expensive endeavor. As with most services, you get what you pay for.With Codingscape you're paying for American Engineers in your Time Zone that are expert level contributors and excellent communicators. We are more expensive than foreign firms and we're more than worth the extra budget.Do the project once, do it right, and you'll be happy you picked this path the first time.",
-        internalLabs: '☐',
+        internalLabs: false,
         internalLabsDescription: "Internal teams are expensive: a new office, a new technology team on top of your existing organization, and it takes time to create these new resources.",
         largeConsultancies: '☐',
         largeConsultanciesDescription: "Large consulting firms are highly profitable for a reason, they charge A LOT for their expertise and long contract durations.",
@@ -130,7 +139,7 @@ const rows = [
         id: 4,
         valueTitle: 'Senior Software Engineers',
         valueTitleDescription: "Working with varied skill level engineers gives varied results. Codingscape matches you with our team of senior engineers that can take projects from start to finish with high quality results.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: "Long contract durations, upside fees, and expensive firms make this an expensive option for access to senior engineers",
@@ -145,7 +154,7 @@ const rows = [
         id: 5,
         valueTitle: 'Remote First',
         valueTitleDescription: "Hiring efficient software collaborators is hard. Codingscape's team are experts at remote and asynchronous communication. We believe in strong communication which is the backbone for successful contributions from remote teams.",
-        internalLabs: '☐',
+        internalLabs: false,
         internalLabsDescription: "Most internal labs might have gone remote for Covid, but they aren't experts at it and will struggle managing their expensive lab remote.",
         largeConsultancies: '☐',
         largeConsultanciesDescription: "Big consultancies specialize in placing their team at your office. They aren't good at working remote.",
@@ -160,7 +169,7 @@ const rows = [
         id: 6,
         valueTitle: 'Direct Access to Engineers',
         valueTitleDescription: "Codingscape gives you direct access to the engineers working on your project thereby creating accountability and communication to achieve successful results. Working with other firms, you're often unable to communicate directly with the engineers on the project.",
-        internalLabs: '☑',
+        internalLabs: false,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: '',
@@ -175,7 +184,7 @@ const rows = [
         id: 7,
         valueTitle: 'USA Based and Working Hours',
         valueTitleDescription: "Collaborating in foreign languages and different time zones is hard. Codingscape works in your time zone with American engineers. Our team will work with you as well or better than your internal team.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: '',
@@ -190,7 +199,7 @@ const rows = [
         id: 8,
         valueTitle: 'Technology Match',
         valueTitleDescription: "Finding development talent in the software language that you organization uses can be difficult. Codingscape will match your project to a senior engineer that is an expert in the language it is written in and will provide scalable code that works well long after our engagement is over.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: '',
@@ -205,7 +214,7 @@ const rows = [
         id: 9,
         valueTitle: 'Enterprise-Grade',
         valueTitleDescription: "Codingscape works with some of the largest tech companies in the world. We are experts at working on legacy systems and integrating new technology into organizations.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: '',
@@ -220,7 +229,7 @@ const rows = [
         id: 10,
         valueTitle: 'Data Security and Privacy',
         valueTitleDescription: "Codingscape works with some of the largest tech companies in the world and adhere to the utmost data and security standards in collaboration with our clients. We can adhere to any data and privacy rulesets that your organization may have.",
-        internalLabs: '☑',
+        internalLabs: true,
         internalLabsDescription: '',
         largeConsultancies: '☑',
         largeConsultanciesDescription: '',
@@ -233,6 +242,16 @@ const rows = [
     },
 ]
 
+const CustomToolbar = () => {
+    return (
+        <GridToolbarContainer>
+            <GridColumnsToolbarButton />
+            <GridFilterToolbarButton />
+            <GridToolbarExport />
+        </GridToolbarContainer>
+    )
+}
+
 const AppContainer = () => {
     return (
         <div style={{display: 'flex', height: '100vh'}}>
@@ -241,10 +260,9 @@ const AppContainer = () => {
                     rows={rows}
                     columns={columns}
                     pageSize={10}
-                    checkboxSelection
                     disableColumnMenu={true}
                     components={{
-                    Toolbar: GridToolbar,
+                    Toolbar: CustomToolbar,
                     }}
                 />
             </div>
