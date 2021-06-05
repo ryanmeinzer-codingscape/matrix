@@ -6,6 +6,15 @@ import {
     GridToolbarExport
 } from '@material-ui/data-grid'
 import Tooltip from '@material-ui/core/Tooltip'
+import {makeStyles} from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+    root: {
+        background: '#000000',
+        border: 0,
+        color: '#FF4844'
+    }
+})
 
 const columns = [
     {
@@ -19,7 +28,7 @@ const columns = [
         disableColumnSelector: true,
         flex: 1,
         renderCell: (params) => (
-            <Tooltip title={params.row.valueTitleDescription}>
+            <Tooltip className={'root'} title={params.row.valueTitleDescription}>
                 <span>{params.value}</span>
             </Tooltip>
         )
@@ -245,20 +254,23 @@ const rows = [
 ]
 
 const CustomToolbar = () => {
+    const classes = useStyles()
     return (
-        <GridToolbarContainer>
-            <GridColumnsToolbarButton />
-            <GridFilterToolbarButton />
-            <GridToolbarExport />
+        <GridToolbarContainer className={classes.root}>
+            <GridColumnsToolbarButton className={classes.root}/>
+            <GridFilterToolbarButton className={classes.root}/>
+            <GridToolbarExport className={classes.root}/>
         </GridToolbarContainer>
     )
 }
 
 const AppContainer = () => {
+    const classes = useStyles()
     return (
         <div style={{display: 'flex', height: '100vh'}}>
             <div style={{flexGrow: 1}}>
                 <DataGrid
+                    className={classes.root}
                     rows={rows}
                     columns={columns}
                     pageSize={10}
