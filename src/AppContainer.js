@@ -6,7 +6,7 @@ import {
     GridToolbarExport
 } from '@material-ui/data-grid'
 import Tooltip from '@material-ui/core/Tooltip'
-import {makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
+import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 
@@ -34,12 +34,18 @@ const useStyles = makeStyles({
     root: {
         background: '#000000',
         border: 0,
-        color: '#FF4844',
-        // fontFamily: 'lores12, sansSerif',
-        // fontStyle: 'normal',
-        // fontWeight: 400
+        color: '#FF4844'
     }
 })
+
+const LightTooltip = withStyles((theme) => ({
+    tooltip: {
+        backgroundColor: theme.palette.common.white,
+        color: '#000000',
+        boxShadow: theme.shadows[1],
+        fontSize: 11,
+    },
+}))(Tooltip);
 
 const columns = [
     {
@@ -53,9 +59,9 @@ const columns = [
         disableColumnSelector: true,
         flex: 1,
         renderCell: (params) => (
-            <Tooltip className={'root'} title={params.row.valueTitleDescription}>
+            <LightTooltip className={'root'} title={params.row.valueTitleDescription}>
                 <span>{params.value}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     },
     {
@@ -66,9 +72,9 @@ const columns = [
         description: "Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.",
         type: 'boolean',
         renderCell: (params) => (
-            <Tooltip title={params.row.internalLabsDescription}>
+            <LightTooltip title={params.row.internalLabsDescription}>
                 <span>{params.value ? '✓' : '◯'}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     },
     {
@@ -79,9 +85,9 @@ const columns = [
         description: "International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.",
         type: 'boolean',
         renderCell: (params) => (
-            <Tooltip title={params.row.largeConsultanciesDescription}>
+            <LightTooltip title={params.row.largeConsultanciesDescription}>
                 <span>{params.value ? '✓' : '◯'}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     },
     {
@@ -92,9 +98,9 @@ const columns = [
         description: "Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.",
         type: 'boolean',
         renderCell: (params) => (
-            <Tooltip title={params.row.codingscapeDescription}>
+            <LightTooltip title={params.row.codingscapeDescription}>
                 <span>{params.value ? '✓' : '◯'}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     },
     {
@@ -105,9 +111,9 @@ const columns = [
         description: "Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.",
         type: 'boolean',
         renderCell: (params) => (
-            <Tooltip title={params.row.nearshoreFirmsDescription}>
+            <LightTooltip title={params.row.nearshoreFirmsDescription}>
                 <span>{params.value ? '✓' : '◯'}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     },
     {
@@ -118,9 +124,9 @@ const columns = [
         description: "Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.",
         type: 'boolean',
         renderCell: (params) => (
-            <Tooltip title={params.row.offshoreFirmsDescription}>
+            <LightTooltip title={params.row.offshoreFirmsDescription}>
                 <span>{params.value ? '✓' : '◯'}</span>
-            </Tooltip>
+            </LightTooltip>
         )
     }
 ]
