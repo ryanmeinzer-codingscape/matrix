@@ -6,13 +6,38 @@ import {
     GridToolbarExport
 } from '@material-ui/data-grid'
 import Tooltip from '@material-ui/core/Tooltip'
-import {makeStyles} from '@material-ui/core/styles'
+import {makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import LoRes from './fonts/lores12ot-reg-webfont.woff2'
+
+const lores = {
+    fontFamily: 'lores12ot-reg',
+    src: `url(${LoRes}) format('woff2')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: 'lores12ot-reg',
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': [lores],
+            },
+        },
+    }
+})
 
 const useStyles = makeStyles({
     root: {
         background: '#000000',
         border: 0,
-        color: '#FF4844'
+        color: '#FF4844',
+        // fontFamily: 'lores12, sansSerif',
+        // fontStyle: 'normal',
+        // fontWeight: 400
     }
 })
 
@@ -42,7 +67,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <Tooltip title={params.row.internalLabsDescription}>
-                <span>{params.value ? '☑' : '☐'}</span>
+                <span>{params.value ? '✓' : '◯'}</span>
             </Tooltip>
         )
     },
@@ -55,7 +80,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <Tooltip title={params.row.largeConsultanciesDescription}>
-                <span>{params.value ? '☑' : '☐'}</span>
+                <span>{params.value ? '✓' : '◯'}</span>
             </Tooltip>
         )
     },
@@ -68,7 +93,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <Tooltip title={params.row.codingscapeDescription}>
-                <span>{params.value ? '☑' : '☐'}</span>
+                <span>{params.value ? '✓' : '◯'}</span>
             </Tooltip>
         )
     },
@@ -81,7 +106,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <Tooltip title={params.row.nearshoreFirmsDescription}>
-                <span>{params.value ? '☑' : '☐'}</span>
+                <span>{params.value ? '✓' : '◯'}</span>
             </Tooltip>
         )
     },
@@ -94,7 +119,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <Tooltip title={params.row.offshoreFirmsDescription}>
-                <span>{params.value ? '☑' : '☐'}</span>
+                <span>{params.value ? '✓' : '◯'}</span>
             </Tooltip>
         )
     }
@@ -267,20 +292,23 @@ const CustomToolbar = () => {
 const AppContainer = () => {
     const classes = useStyles()
     return (
-        <div style={{display: 'flex', height: '100vh'}}>
-            <div style={{flexGrow: 1}}>
-                <DataGrid
-                    className={classes.root}
-                    rows={rows}
-                    columns={columns}
-                    pageSize={10}
-                    disableColumnMenu={true}
-                    components={{
-                    Toolbar: CustomToolbar,
-                    }}
-                />
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div style={{display: 'flex', height: '100vh'}}>
+                <div style={{flexGrow: 1}}>
+                    <DataGrid
+                        className={classes.root}
+                        rows={rows}
+                        columns={columns}
+                        pageSize={10}
+                        disableColumnMenu={true}
+                        components={{
+                        Toolbar: CustomToolbar,
+                        }}
+                    />
+                </div>
             </div>
-        </div>
+        </ThemeProvider>
     )
 }
 
