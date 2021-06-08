@@ -107,12 +107,12 @@ const columns = [
     },
     {
         field: 'internalLabs',
-        headerName: 'Internal Labs ＄＄＄＄＄',
+        headerName: 'Internal Labs $$$$$',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5}}>Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.</div>,
         sortable: false,
-        flex: 1.2,
+        flex: 1.1,
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
@@ -122,7 +122,7 @@ const columns = [
     },
     {
         field: 'largeConsultancies',
-        headerName: 'Large Consultancies ＄＄＄＄',
+        headerName: 'Large Consultancies $$$$',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
@@ -138,13 +138,13 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: 'Codingscape ＄＄＄',
+        headerName: 'Codingscape $$$',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
             }}>Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.</div>,
         sortable: false,
-        flex: 1.1,
+        flex: 1,
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.codingscapeDescription} TransitionComponent={Zoom}>
@@ -154,7 +154,7 @@ const columns = [
     },
     {
         field: 'nearshoreFirms',
-        headerName: 'Nearshore Firms ＄＄',
+        headerName: 'Nearshore Firms $$',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
@@ -170,7 +170,7 @@ const columns = [
     },
     {
         field: 'offshoreFirms',
-        headerName: 'Offshore Firms ＄',
+        headerName: 'Offshore Firms $',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
