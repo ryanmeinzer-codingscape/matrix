@@ -43,9 +43,9 @@ const useStyles = makeStyles({
 
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
-        backgroundColor: theme.palette.common.white,
+        backgroundColor: '#ffffff',
         color: '#000000',
-        boxShadow: theme.shadows[1],
+        boxShadow: theme.shadows[8],
         fontSize: 16,
     },
 }))(Tooltip);
