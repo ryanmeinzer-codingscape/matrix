@@ -33,7 +33,7 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
     root: {
-        background: '#000000',
+        // background: '#000000',
         border: 0,
         color: '#FF4844'
     }
@@ -312,6 +312,7 @@ const AppContainer = () => {
                         components={{
                         Toolbar: CustomToolbar,
                         }}
+                        disableSelectionOnClick={true}
                     />
                 </div>
             </div>
