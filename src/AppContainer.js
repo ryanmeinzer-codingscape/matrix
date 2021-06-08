@@ -66,7 +66,7 @@ const columns = [
     },
     {
         field: 'internalLabs',
-        headerName: 'Internal Labs $$$$$',
+        headerName: 'Internal Labs ＄＄＄＄＄',
         sortable: false,
         flex: 1,
         description: "Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.",
@@ -79,7 +79,7 @@ const columns = [
     },
     {
         field: 'largeConsultancies',
-        headerName: 'Large Consultancies $$$$',
+        headerName: 'Large Consultancies ＄＄＄＄',
         sortable: false,
         flex: 1,
         description: "International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.",
@@ -92,7 +92,7 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: 'Codingscape $$$',
+        headerName: 'Codingscape ＄＄＄',
         sortable: false,
         flex: 1,
         description: "Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.",
@@ -105,7 +105,7 @@ const columns = [
     },
     {
         field: 'nearshoreFirms',
-        headerName: 'Nearshore Firms $$',
+        headerName: 'Nearshore Firms ＄＄',
         sortable: false,
         flex: 1,
         description: "Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.",
@@ -118,7 +118,7 @@ const columns = [
     },
     {
         field: 'offshoreFirms',
-        headerName: 'Offshore Firms $',
+        headerName: 'Offshore Firms ＄',
         sortable: false,
         flex: 1,
         description: "Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.",
