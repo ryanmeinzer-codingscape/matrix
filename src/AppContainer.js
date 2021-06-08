@@ -29,12 +29,14 @@ const theme = createMuiTheme({
                 '@font-face': [lores],
             },
         },
-    }
+    },
 })
 
 const useStyles = makeStyles({
     root: {
         background: '#000000',
+        // ToDo - add toggle for dark / light mode
+        // background: '#F9F5EC',
         border: 0,
         color: '#FF4844',
         cursor: 'pointer'
@@ -44,7 +46,11 @@ const useStyles = makeStyles({
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
         backgroundColor: '#ffffff',
+        // ToDo - add toggle for dark / light mode
+        // backgroundColor: '#2B2424',
         color: '#000000',
+        // ToDo - add toggle for dark / light mode
+        // color: '#ffffff',
         boxShadow: theme.shadows[8],
         fontSize: 16,
     },
@@ -69,7 +75,10 @@ const columns = [
     },
     {
         field: 'internalLabs',
-        headerName: <LightTooltip title={'Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.'} TransitionComponent={Zoom}><span>Internal Labs ＄＄＄＄＄</span></LightTooltip>,
+        headerName: 'Internal Labs ＄＄＄＄＄',
+        description:
+            <div style={{
+            background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5}}>Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.</div>,
         sortable: false,
         flex: 1.2,
         type: 'boolean',
@@ -81,7 +90,11 @@ const columns = [
     },
     {
         field: 'largeConsultancies',
-        headerName: <LightTooltip title={'International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.'} TransitionComponent={Zoom}><span>Large Consultancies ＄＄＄＄</span></LightTooltip>,
+        headerName: 'Large Consultancies ＄＄＄＄',
+        description:
+            <div style={{
+                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+            }}>International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.</div>,
         sortable: false,
         flex: 1.4,
         type: 'boolean',
@@ -93,7 +106,11 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: <LightTooltip title={'Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.'} TransitionComponent={Zoom}><span>Codingscape ＄＄＄</span></LightTooltip>,
+        headerName: 'Codingscape ＄＄＄',
+        description:
+            <div style={{
+                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+            }}>Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.</div>,
         sortable: false,
         flex: 1.1,
         type: 'boolean',
@@ -105,7 +122,11 @@ const columns = [
     },
     {
         field: 'nearshoreFirms',
-        headerName: <LightTooltip title={'Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.'} TransitionComponent={Zoom}><span>Nearshore Firms ＄＄</span></LightTooltip>,
+        headerName: 'Nearshore Firms ＄＄',
+        description:
+            <div style={{
+                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+            }}>Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.</div>,
         sortable: false,
         flex: 1.1,
         type: 'boolean',
@@ -117,7 +138,11 @@ const columns = [
     },
     {
         field: 'offshoreFirms',
-        headerName: <LightTooltip title={'Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.'} TransitionComponent={Zoom}><span>Offshore Firms ＄</span></LightTooltip>,
+        headerName: 'Offshore Firms ＄',
+        description:
+            <div style={{
+                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+            }}>Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.</div>,
         sortable: false,
         flex: 1,
         type: 'boolean',
