@@ -28,7 +28,7 @@ Available in [Codingscape Sprints](https://trello.com/b/oHExnmoN/codingscape-spr
 - View elaborations of differentiators on hover
 - Filter differentiators of relevance
 - Export value matrix to share internally
-- Styled with Codingscape's Style Guide (INCOMPLETE)
+- Styled with Codingscape's Style Guide
 - On mobile, view differentiators by value and elaborations on click (INCOMPLETE)
 
 ## Framework
