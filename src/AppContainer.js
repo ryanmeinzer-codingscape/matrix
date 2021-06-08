@@ -36,7 +36,8 @@ const useStyles = makeStyles({
     root: {
         background: '#000000',
         border: 0,
-        color: '#FF4844'
+        color: '#FF4844',
+        cursor: 'pointer'
     }
 })
 
@@ -68,10 +69,9 @@ const columns = [
     },
     {
         field: 'internalLabs',
-        headerName: 'Internal Labs ＄＄＄＄＄',
+        headerName: <LightTooltip title={'Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.'} TransitionComponent={Zoom}><span>Internal Labs ＄＄＄＄＄</span></LightTooltip>,
         sortable: false,
         flex: 1.2,
-        description: "Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.",
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
@@ -81,10 +81,9 @@ const columns = [
     },
     {
         field: 'largeConsultancies',
-        headerName: 'Large Consultancies ＄＄＄＄',
+        headerName: <LightTooltip title={'International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.'} TransitionComponent={Zoom}><span>Large Consultancies ＄＄＄＄</span></LightTooltip>,
         sortable: false,
         flex: 1.4,
-        description: "International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.",
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.largeConsultanciesDescription} TransitionComponent={Zoom}>
@@ -94,10 +93,9 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: 'Codingscape ＄＄＄',
+        headerName: <LightTooltip title={'Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.'} TransitionComponent={Zoom}><span>Codingscape ＄＄＄</span></LightTooltip>,
         sortable: false,
         flex: 1.1,
-        description: "Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.",
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.codingscapeDescription} TransitionComponent={Zoom}>
@@ -107,10 +105,9 @@ const columns = [
     },
     {
         field: 'nearshoreFirms',
-        headerName: 'Nearshore Firms ＄＄',
+        headerName: <LightTooltip title={'Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.'} TransitionComponent={Zoom}><span>Nearshore Firms ＄＄</span></LightTooltip>,
         sortable: false,
         flex: 1.1,
-        description: "Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.",
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.nearshoreFirmsDescription} TransitionComponent={Zoom}>
@@ -120,10 +117,9 @@ const columns = [
     },
     {
         field: 'offshoreFirms',
-        headerName: 'Offshore Firms ＄',
+        headerName: <LightTooltip title={'Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.'} TransitionComponent={Zoom}><span>Offshore Firms ＄</span></LightTooltip>,
         sortable: false,
         flex: 1,
-        description: "Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.",
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.offshoreFirmsDescription} TransitionComponent={Zoom}>
