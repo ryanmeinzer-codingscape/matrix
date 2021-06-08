@@ -9,30 +9,40 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Zoom from '@material-ui/core/Zoom';
 import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import LoRes from './fonts/lores12ot-reg-webfont.woff2'
+// import LoRes from './fonts/lores12ot-reg-webfont.woff2'
+import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 
-const lores = {
-    fontFamily: 'lores12ot-reg',
-    src: `url(${LoRes}) format('woff2')`,
+// const lores = {
+//     fontFamily: 'lores12ot-reg',
+//     src: `url(${LoRes}) format('woff2')`,
+//     fontWeight: 'normal',
+//     fontStyle: 'normal'
+// }
+
+const leawood = {
+    fontFamily: 'ITC Leawood W01 Book',
+    src: `url(${Leawood}) format('woff2')`,
     fontWeight: 'normal',
     fontStyle: 'normal'
 }
 
 const theme = createMuiTheme({
     typography: {
-        fontFamily: 'lores12ot-reg',
+        fontFamily: 'ITC Leawood W01 Book',
+        // fontFamily: 'lores12ot-reg',
         fontSize: 20
     },
     overrides: {
         MuiCssBaseline: {
             '@global': {
-                '@font-face': [lores],
+                // '@font-face': [lores],
+                '@font-face': [leawood],
             },
         },
     },
 })
 
-const isDarkTheme = true
+const isDarkTheme = false
 
 let backgroundDetector = () => {
     if (isDarkTheme) {
@@ -62,7 +72,9 @@ const useStyles = makeStyles({
     root: {
         background: backgroundDetector,
         border: 0,
-        color: '#FF4844',
+        color: backgroundColorDetector,
+        // color: '#FF4844',
+        // color: '#2B2424',
         cursor: 'pointer'
     }
 })
