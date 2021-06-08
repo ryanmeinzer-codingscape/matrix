@@ -73,8 +73,6 @@ const useStyles = makeStyles({
         background: backgroundDetector,
         border: 0,
         color: backgroundColorDetector,
-        // color: '#FF4844',
-        // color: '#2B2424',
         cursor: 'pointer'
     }
 })
@@ -357,16 +355,20 @@ const AppContainer = () => {
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
+                    <div className={classes.root} style={{padding: '10px'}}>
+                        <h1>Value Matrix</h1>
+                        <p>See how Codingscape compares to other Custom Software Development options in the market. Hover over values for explanations.</p>
+                    </div>
                     <DataGrid
                         className={classes.root}
                         rows={rows}
                         columns={columns}
                         pageSize={10}
                         disableColumnMenu={true}
-                        components={{
-                        Toolbar: CustomToolbar,
-                        }}
                         disableSelectionOnClick={true}
+                        components={{
+                            Toolbar: CustomToolbar,
+                        }}
                     />
                 </div>
             </div>
