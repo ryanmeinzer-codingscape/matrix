@@ -32,11 +32,35 @@ const theme = createMuiTheme({
     },
 })
 
+const isDarkTheme = true
+
+let backgroundDetector = () => {
+    if (isDarkTheme) {
+        return '#000000'
+    } else {
+        return '#F9F5EC'
+    }
+}
+
+let backgroundColorDetector = () => {
+    if (isDarkTheme) {
+        return '#ffffff'
+    } else {
+        return '#2B2424'
+    }
+}
+
+let colorDetector = () => {
+    if (isDarkTheme) {
+        return '#000000'
+    } else {
+        return '#ffffff'
+    }
+}
+
 const useStyles = makeStyles({
     root: {
-        background: '#000000',
-        // ToDo - add toggle for dark / light mode
-        // background: '#F9F5EC',
+        background: backgroundDetector,
         border: 0,
         color: '#FF4844',
         cursor: 'pointer'
@@ -45,12 +69,8 @@ const useStyles = makeStyles({
 
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
-        backgroundColor: '#ffffff',
-        // ToDo - add toggle for dark / light mode
-        // backgroundColor: '#2B2424',
-        color: '#000000',
-        // ToDo - add toggle for dark / light mode
-        // color: '#ffffff',
+        backgroundColor: backgroundColorDetector,
+        color: colorDetector,
         boxShadow: theme.shadows[8],
         fontSize: 16,
     },
@@ -78,7 +98,7 @@ const columns = [
         headerName: 'Internal Labs ＄＄＄＄＄',
         description:
             <div style={{
-            background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5}}>Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.</div>,
+                background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5}}>Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.</div>,
         sortable: false,
         flex: 1.2,
         type: 'boolean',
@@ -93,7 +113,7 @@ const columns = [
         headerName: 'Large Consultancies ＄＄＄＄',
         description:
             <div style={{
-                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+                background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
             }}>International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.</div>,
         sortable: false,
         flex: 1.4,
@@ -109,7 +129,7 @@ const columns = [
         headerName: 'Codingscape ＄＄＄',
         description:
             <div style={{
-                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+                background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
             }}>Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.</div>,
         sortable: false,
         flex: 1.1,
@@ -125,7 +145,7 @@ const columns = [
         headerName: 'Nearshore Firms ＄＄',
         description:
             <div style={{
-                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+                background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
             }}>Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.</div>,
         sortable: false,
         flex: 1.1,
@@ -141,7 +161,7 @@ const columns = [
         headerName: 'Offshore Firms ＄',
         description:
             <div style={{
-                background: '#ffffff', color: '#000000', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
+                background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
             }}>Offshore Firms are cheap but their benefits end there. Quality, communication, and meeting deadlines within originally quoted budgets are all problems with Offshore Firms.</div>,
         sortable: false,
         flex: 1,
