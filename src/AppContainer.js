@@ -20,6 +20,7 @@ const lores = {
 const theme = createMuiTheme({
     typography: {
         fontFamily: 'lores12ot-reg',
+        fontSize: 20
     },
     overrides: {
         MuiCssBaseline: {
@@ -57,7 +58,7 @@ const columns = [
         headerName: ' ',
         sortable: false,
         disableColumnSelector: true,
-        flex: 1,
+        flex: 1.4,
         renderCell: (params) => (
             <LightTooltip className={'root'} title={params.row.valueTitleDescription}>
                 <span>{params.value}</span>
@@ -68,7 +69,7 @@ const columns = [
         field: 'internalLabs',
         headerName: 'Internal Labs ＄＄＄＄＄',
         sortable: false,
-        flex: 1,
+        flex: 1.2,
         description: "Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.",
         type: 'boolean',
         renderCell: (params) => (
@@ -81,7 +82,7 @@ const columns = [
         field: 'largeConsultancies',
         headerName: 'Large Consultancies ＄＄＄＄',
         sortable: false,
-        flex: 1,
+        flex: 1.4,
         description: "International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.",
         type: 'boolean',
         renderCell: (params) => (
@@ -94,7 +95,7 @@ const columns = [
         field: 'codingscape',
         headerName: 'Codingscape ＄＄＄',
         sortable: false,
-        flex: 1,
+        flex: 1.1,
         description: "Codingscape is the right balance of high-quality software development with the agility to meet tight deadlines at the market rate price to work with Senior American Software Engineers.",
         type: 'boolean',
         renderCell: (params) => (
@@ -107,7 +108,7 @@ const columns = [
         field: 'nearshoreFirms',
         headerName: 'Nearshore Firms ＄＄',
         sortable: false,
-        flex: 1,
+        flex: 1.1,
         description: "Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.",
         type: 'boolean',
         renderCell: (params) => (
