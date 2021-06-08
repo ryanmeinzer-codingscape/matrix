@@ -104,7 +104,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : '◯'}</span>
+                <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
         )
     },
@@ -120,7 +120,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.largeConsultanciesDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : '◯'}</span>
+                <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
         )
     },
@@ -136,7 +136,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.codingscapeDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : '◯'}</span>
+                <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
         )
     },
@@ -152,7 +152,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.nearshoreFirmsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : '◯'}</span>
+                <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
         )
     },
@@ -168,7 +168,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.offshoreFirmsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : '◯'}</span>
+                <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
         )
     }
