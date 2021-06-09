@@ -9,15 +9,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Zoom from '@material-ui/core/Zoom';
 import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-// import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
-
-// const lores = {
-//     fontFamily: 'lores12ot-reg',
-//     src: `url(${LoRes}) format('woff2')`,
-//     fontWeight: 'normal',
-//     fontStyle: 'normal'
-// }
 
 const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
@@ -29,17 +21,15 @@ const leawood = {
 const theme = createMuiTheme({
     typography: {
         fontFamily: 'ITC Leawood W01 Book',
-        // fontFamily: 'lores12ot-reg',
         fontSize: 20
     },
     overrides: {
         MuiCssBaseline: {
             '@global': {
-                // '@font-face': [lores],
-                '@font-face': [leawood],
+                '@font-face': [leawood]
             },
-        },
-    },
+        }
+    }
 })
 
 const isDarkTheme = false
@@ -72,9 +62,25 @@ const useStyles = makeStyles({
     root: {
         background: backgroundDetector,
         border: 0,
+        // border: '1px solid red',
         color: backgroundColorDetector,
-        cursor: 'pointer'
-    }
+        cursor: 'pointer',
+    },
+    // row: {
+    //     border: '1px solid red'
+    // }
+    //     rows: '1px solid red',
+    //     '& *, & *::before, & *::after': {
+    //         boxSizing: 'inherit',
+    //     },
+    //     '&.MuiDataGrid-autoHeight': {
+    //         height: '300px',
+    //     },
+    //     '&.MuiDataGrid-row': {
+    //         height: '300px',
+    //         borderTop: '1px solid red'
+    //     }
+    // }
 })
 
 const LightTooltip = withStyles((theme) => ({
@@ -202,7 +208,8 @@ const rows = [
         nearshoreFirms: false,
         nearshoreFirmsDescription: "Quality can suffer with language barriers and disconnects between the sales team and the engineering teams.",
         offshoreFirms: false,
-        offshoreFirmsDescription: "Quality almost always suffers with timezone and language barriers."
+        offshoreFirmsDescription: "Quality almost always suffers with timezone and language barriers.",
+        borderColor: '1px solid red',
     },
     {
         id: 2,
@@ -361,11 +368,12 @@ const AppContainer = () => {
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
                         <h1>Value Matrix</h1>
-                        <p>See how Codingscape compares to other Custom Software Development options in the market. Hover over values for explanations.</p>
+                        <p>See how Codingscape compares to other Custom Software Development options in the market. Hover/Tap on values for explanations.</p>
                     </div>
                     <DataGrid
                         className={classes.root}
                         rows={rows}
+                        row={classes.row}
                         // columns={[{field: 'codingscape', width: 200}, {field: 'offshoreFirms', width: 200}]}
                         columns={columns}
                         pageSize={10}
@@ -374,6 +382,7 @@ const AppContainer = () => {
                         components={{
                             Toolbar: CustomToolbar,
                         }}
+                        rowClassName={classes.root}
                     />
                 </div>
             </div>
