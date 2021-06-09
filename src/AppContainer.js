@@ -116,7 +116,8 @@ const columns = [
             <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
                 <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
-        )
+        ),
+        // hide: true
     },
     {
         field: 'largeConsultancies',
@@ -132,7 +133,8 @@ const columns = [
             <LightTooltip title={params.row.largeConsultanciesDescription} TransitionComponent={Zoom}>
                 <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
-        )
+        ),
+        // hide: true
     },
     {
         field: 'codingscape',
@@ -164,7 +166,8 @@ const columns = [
             <LightTooltip title={params.row.nearshoreFirmsDescription} TransitionComponent={Zoom}>
                 <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
-        )
+        ),
+        // hide: true
     },
     {
         field: 'offshoreFirms',
@@ -180,7 +183,8 @@ const columns = [
             <LightTooltip title={params.row.offshoreFirmsDescription} TransitionComponent={Zoom}>
                 <span>{params.value ? '✓' : 'X'}</span>
             </LightTooltip>
-        )
+        ),
+        // hide: true
     }
 ]
 
@@ -355,13 +359,14 @@ const AppContainer = () => {
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
-                    <div className={classes.root} style={{padding: '10px'}}>
+                    <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
                         <h1>Value Matrix</h1>
                         <p>See how Codingscape compares to other Custom Software Development options in the market. Hover over values for explanations.</p>
                     </div>
                     <DataGrid
                         className={classes.root}
                         rows={rows}
+                        // columns={[{field: 'codingscape', width: 200}, {field: 'offshoreFirms', width: 200}]}
                         columns={columns}
                         pageSize={10}
                         disableColumnMenu={true}
