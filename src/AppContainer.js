@@ -9,7 +9,15 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Zoom from '@material-ui/core/Zoom';
 import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
+
+const lores = {
+    fontFamily: 'lores12ot-reg',
+    src: `url(${LoRes}) format('woff2')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
 
 const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
@@ -17,6 +25,20 @@ const leawood = {
     fontWeight: 'normal',
     fontStyle: 'normal'
 }
+
+const header = createMuiTheme({
+    typography: {
+        fontFamily: 'lores12ot-reg',
+        // fontSize: 20
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': [lores],
+            },
+        },
+    },
+})
 
 const theme = createMuiTheme({
     typography: {
@@ -55,14 +77,6 @@ let colorDetector = () => {
         return '#000000'
     } else {
         return '#ffffff'
-    }
-}
-
-let borderDetector = () => {
-    if (isDarkTheme) {
-        return '1px solid #000000'
-    } else {
-        return '1px solid #FF4844'
     }
 }
 
@@ -367,13 +381,18 @@ const CustomToolbar = () => {
 
 const AppContainer = () => {
     const classes = useStyles()
-    return (
+    return (    
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
-                        <h1>Value Matrix</h1>
+                            <h1 style={{
+                                fontFamily: 'lores12ot-reg',
+                                src: `url(${LoRes}) format('woff2')`,
+                                fontWeight: 'normal',
+                                fontStyle: 'normal',
+                            }}>Custom Development Market</h1>
                         <p>See how Codingscape compares to other Custom Software Development options in the market. Hover/Tap on values for explanations.</p>
                     </div>
                     <DataGrid
@@ -390,7 +409,7 @@ const AppContainer = () => {
                     />
                 </div>
             </div>
-        </ThemeProvider>
+            </ThemeProvider>
     )
 }
 
