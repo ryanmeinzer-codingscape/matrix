@@ -12,7 +12,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 
-const isDarkTheme = true
+const isDarkTheme = false
 
 const lores = {
     fontFamily: 'lores12ot-reg',
@@ -416,6 +416,7 @@ const AppContainer = () => {
                         components={{
                             Toolbar: CustomToolbar,
                         }}
+                        hideFooter={true}
                     />
                 </div>
             </div>
