@@ -14,26 +14,25 @@ import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 
 const isDarkTheme = true
 
-// const lores = {
-//     fontFamily: 'lores12ot-reg',
-//     src: `url(${LoRes}) format('woff2')`,
-//     fontWeight: 'normal',
-//     fontStyle: 'normal'
-// }
+const lores = {
+    fontFamily: 'lores12ot-reg',
+    src: `url(${LoRes}) format('woff2')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
 
-// const header = createMuiTheme({
-//     typography: {
-//         fontFamily: 'lores12ot-reg',
-//         // fontSize: 20
-//     },
-//     overrides: {
-//         MuiCssBaseline: {
-//             '@global': {
-//                 '@font-face': [lores],
-//             },
-//         },
-//     },
-// })
+const headerTitle = createMuiTheme({
+    typography: {
+        fontFamily: 'lores12ot-reg'
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': [lores],
+            },
+        },
+    },
+})
 
 const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
@@ -372,7 +371,7 @@ const rows = [
 const CustomToolbar = () => {
     const classes = useStyles()
     return (
-        <GridToolbarContainer className={classes.root}>
+        <GridToolbarContainer className={classes.root} style={{padding: '0 10px'}}>
             <GridColumnsToolbarButton className={classes.root}/>
             <GridFilterToolbarButton className={classes.root}/>
             <GridToolbarExport className={classes.root}/>
@@ -384,18 +383,26 @@ const AppContainer = () => {
     const classes = useStyles()
     return (
         <>
-        {/* <h1 style={{
+        <ThemeProvider theme={headerTitle}>
+            <CssBaseline />
+        </ThemeProvider>
+        <h1
+            className={classes.root}
+            style={{
             fontFamily: 'lores12ot-reg',
             src: `url(${LoRes}) format('woff2')`,
             fontWeight: 'normal',
             fontStyle: 'normal',
-        }}>Custom Development Market</h1> */}
+            fontSize: 48,
+            padding: '20px 10px 10px 10px', 
+            margin: '-10px 0px'
+            }}
+        >Custom Development Market</h1>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
-                        <h1>Custom Development Market</h1>
                         <p>See how Codingscape compares. Hover/Tap on values for explanations.</p>
                     </div>
                     <DataGrid
