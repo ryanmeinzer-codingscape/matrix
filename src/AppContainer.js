@@ -9,15 +9,31 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Zoom from '@material-ui/core/Zoom';
 import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
+import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 
-const lores = {
-    fontFamily: 'lores12ot-reg',
-    src: `url(${LoRes}) format('woff2')`,
-    fontWeight: 'normal',
-    fontStyle: 'normal'
-}
+const isDarkTheme = true
+
+// const lores = {
+//     fontFamily: 'lores12ot-reg',
+//     src: `url(${LoRes}) format('woff2')`,
+//     fontWeight: 'normal',
+//     fontStyle: 'normal'
+// }
+
+// const header = createMuiTheme({
+//     typography: {
+//         fontFamily: 'lores12ot-reg',
+//         // fontSize: 20
+//     },
+//     overrides: {
+//         MuiCssBaseline: {
+//             '@global': {
+//                 '@font-face': [lores],
+//             },
+//         },
+//     },
+// })
 
 const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
@@ -26,19 +42,6 @@ const leawood = {
     fontStyle: 'normal'
 }
 
-const header = createMuiTheme({
-    typography: {
-        fontFamily: 'lores12ot-reg',
-        // fontSize: 20
-    },
-    overrides: {
-        MuiCssBaseline: {
-            '@global': {
-                '@font-face': [lores],
-            },
-        },
-    },
-})
 
 const theme = createMuiTheme({
     typography: {
@@ -53,8 +56,6 @@ const theme = createMuiTheme({
         }
     }
 })
-
-const isDarkTheme = true
 
 let backgroundDetector = () => {
     if (isDarkTheme) {
@@ -141,7 +142,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : 'X'}</span>
+                <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
             </LightTooltip>
         ),
         // hide: true
@@ -158,7 +159,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.largeConsultanciesDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : 'X'}</span>
+                <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
             </LightTooltip>
         ),
         // hide: true
@@ -175,7 +176,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.codingscapeDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : 'X'}</span>
+                <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
             </LightTooltip>
         )
     },
@@ -191,7 +192,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.nearshoreFirmsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : 'X'}</span>
+                <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
             </LightTooltip>
         ),
         // hide: true
@@ -208,7 +209,7 @@ const columns = [
         type: 'boolean',
         renderCell: (params) => (
             <LightTooltip title={params.row.offshoreFirmsDescription} TransitionComponent={Zoom}>
-                <span>{params.value ? '✓' : 'X'}</span>
+                <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
             </LightTooltip>
         ),
         // hide: true
@@ -381,19 +382,21 @@ const CustomToolbar = () => {
 
 const AppContainer = () => {
     const classes = useStyles()
-    return (    
+    return (
+        <>
+        {/* <h1 style={{
+            fontFamily: 'lores12ot-reg',
+            src: `url(${LoRes}) format('woff2')`,
+            fontWeight: 'normal',
+            fontStyle: 'normal',
+        }}>Custom Development Market</h1> */}
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
-                            <h1 style={{
-                                fontFamily: 'lores12ot-reg',
-                                src: `url(${LoRes}) format('woff2')`,
-                                fontWeight: 'normal',
-                                fontStyle: 'normal',
-                            }}>Custom Development Market</h1>
-                        <p>See how Codingscape compares to other Custom Software Development options in the market. Hover/Tap on values for explanations.</p>
+                        <h1>Custom Development Market</h1>
+                        <p>See how Codingscape compares. Hover/Tap on values for explanations.</p>
                     </div>
                     <DataGrid
                         className={classes.root}
@@ -409,7 +412,8 @@ const AppContainer = () => {
                     />
                 </div>
             </div>
-            </ThemeProvider>
+        </ThemeProvider>
+        </>
     )
 }
 
