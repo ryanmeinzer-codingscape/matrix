@@ -32,7 +32,7 @@ const theme = createMuiTheme({
     }
 })
 
-const isDarkTheme = false
+const isDarkTheme = true
 
 let backgroundDetector = () => {
     if (isDarkTheme) {
@@ -58,29 +58,36 @@ let colorDetector = () => {
     }
 }
 
+let borderDetector = () => {
+    if (isDarkTheme) {
+        return '1px solid #000000'
+    } else {
+        return '1px solid #FF4844'
+    }
+}
+
 const useStyles = makeStyles({
     root: {
         background: backgroundDetector,
         border: 0,
-        // border: '1px solid red',
         color: backgroundColorDetector,
         cursor: 'pointer',
-    },
-    // row: {
-    //     border: '1px solid red'
-    // }
-    //     rows: '1px solid red',
-    //     '& *, & *::before, & *::after': {
-    //         boxSizing: 'inherit',
-    //     },
-    //     '&.MuiDataGrid-autoHeight': {
-    //         height: '300px',
-    //     },
-    //     '&.MuiDataGrid-row': {
-    //         height: '300px',
-    //         borderTop: '1px solid red'
-    //     }
-    // }
+        '& .MuiDataGrid-row': {
+            borderTop: 0,
+            borderBottom: isDarkTheme ? '1px solid #FF4844' : '1px solid #2B2424',
+            borderLeft: 0,
+            borderRight: 0
+        },
+        '& .MuiDataGrid-columnsContainer': {
+            borderBottom: isDarkTheme ? '1px solid #FF4844' : '1px solid #2B2424'
+        },
+        '& .MuiDataGrid-cell': {
+            border: 0
+        },
+        '& .MuiDataGrid-iconSeparator': {
+            color: isDarkTheme ? '#FF4844' : '#2B2424'
+        }
+    }
 })
 
 const LightTooltip = withStyles((theme) => ({
@@ -208,8 +215,7 @@ const rows = [
         nearshoreFirms: false,
         nearshoreFirmsDescription: "Quality can suffer with language barriers and disconnects between the sales team and the engineering teams.",
         offshoreFirms: false,
-        offshoreFirmsDescription: "Quality almost always suffers with timezone and language barriers.",
-        borderColor: '1px solid red',
+        offshoreFirmsDescription: "Quality almost always suffers with timezone and language barriers."
     },
     {
         id: 2,
@@ -374,7 +380,6 @@ const AppContainer = () => {
                         className={classes.root}
                         rows={rows}
                         row={classes.row}
-                        // columns={[{field: 'codingscape', width: 200}, {field: 'offshoreFirms', width: 200}]}
                         columns={columns}
                         pageSize={10}
                         disableColumnMenu={true}
@@ -382,7 +387,6 @@ const AppContainer = () => {
                         components={{
                             Toolbar: CustomToolbar,
                         }}
-                        rowClassName={classes.root}
                     />
                 </div>
             </div>
