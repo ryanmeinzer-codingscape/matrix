@@ -88,12 +88,12 @@ const useStyles = makeStyles({
         cursor: 'pointer',
         '& .MuiDataGrid-row': {
             borderTop: 0,
-            borderBottom: isDarkTheme ? '1px solid #FF4844' : '1px solid #2B2424',
+            borderBottom: '1px solid #FF4844',
             borderLeft: 0,
             borderRight: 0
         },
         '& .MuiDataGrid-columnsContainer': {
-            borderBottom: isDarkTheme ? '1px solid #FF4844' : '1px solid #2B2424'
+            borderBottom: '1px solid #FF4844'
         },
         '& .MuiDataGrid-cell': {
             border: 0
