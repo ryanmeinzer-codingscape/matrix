@@ -100,6 +100,14 @@ const useStyles = makeStyles({
         },
         '& .MuiDataGrid-iconSeparator': {
             color: isDarkTheme ? '#FF4844' : '#2B2424'
+        },
+        '& .Codingscape-column': {
+            // color: isDarkTheme ? '#FF4844' : '#2B2424'
+            borderLeft: '3px solid #2B2424',
+            borderRight: '3px solid #2B2424',
+            margin: '0 0 0 -4px'
+            // backgroundColor: '#FF4844',
+            // opacity: '50%'
         }
     }
 })
@@ -166,6 +174,7 @@ const columns = [
     {
         field: 'codingscape',
         headerName: <span style={{fontWeight: 'bold'}}>Codingscape $$$</span>,
+        cellClassName: 'Codingscape-column',
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
