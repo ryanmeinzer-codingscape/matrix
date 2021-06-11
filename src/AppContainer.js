@@ -11,6 +11,7 @@ import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-u
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
+import {red} from '@material-ui/core/colors'
 
 const isDarkTheme = false
 
@@ -38,7 +39,6 @@ const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
     src: `url(${Leawood}) format('woff2')`,
     fontWeight: 'normal',
-    fontStyle: 'normal'
 }
 
 
@@ -105,7 +105,15 @@ const useStyles = makeStyles({
             borderLeft: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
             borderRight: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
             margin: '0 0 0 -4px'
-        }
+        },
+        // successfully changes widget headers to red
+        '& .MuiButtonBase-root': {
+            color: '#FF4844 !important'
+        },
+        // successfully changes widget headers to red but any derivation doesn't change widget labels or button colors
+        // '& .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary': {
+        //     color: '#FF4844 !important'
+        // }
     }
 })
 
