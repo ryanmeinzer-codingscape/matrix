@@ -165,7 +165,7 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: 'Codingscape $$$',
+        headerName: <span style={{fontWeight: 'bold'}}>Codingscape $$$</span>,
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
@@ -411,7 +411,6 @@ const AppContainer = () => {
                         row={classes.row}
                         columns={columns}
                         pageSize={10}
-                        disableColumnMenu={true}
                         disableSelectionOnClick={true}
                         components={{
                             Toolbar: CustomToolbar,
