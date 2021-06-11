@@ -99,15 +99,12 @@ const useStyles = makeStyles({
             border: 0
         },
         '& .MuiDataGrid-iconSeparator': {
-            color: isDarkTheme ? '#FF4844' : '#2B2424'
+            color: isDarkTheme ? '#ffffff' : '#2B2424'
         },
         '& .Codingscape-column': {
-            // color: isDarkTheme ? '#FF4844' : '#2B2424'
-            borderLeft: '3px solid #2B2424',
-            borderRight: '3px solid #2B2424',
+            borderLeft: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
+            borderRight: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
             margin: '0 0 0 -4px'
-            // backgroundColor: '#FF4844',
-            // opacity: '50%'
         }
     }
 })
