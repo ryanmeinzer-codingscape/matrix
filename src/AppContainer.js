@@ -11,9 +11,8 @@ import {withStyles, makeStyles, createMuiTheme, ThemeProvider} from '@material-u
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
-import {red} from '@material-ui/core/colors'
 
-const isDarkTheme = false
+const isDarkTheme = true
 
 const lores = {
     fontFamily: 'lores12ot-reg',
@@ -50,8 +49,27 @@ const theme = createMuiTheme({
     overrides: {
         MuiCssBaseline: {
             '@global': {
-                '@font-face': [leawood]
-            },
+                '@font-face': [leawood],
+                '.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl': {
+                    color: isDarkTheme ? '#000000' : '#2B2424'
+                },
+                '.MuiInput-underline:after': {
+                    borderBottom: isDarkTheme ? '#000000' : '#2B2424'
+                },
+                '.MuiButton-root': {
+                    color: isDarkTheme ? '#000000' : '#2B2424'
+                },
+                '.MuiIconButton-label': {
+                    color: '#FF4844'
+                },
+                '.MuiSwitch-track': {
+                    // color: '#FF4844',
+                    backgroundColor: '#000000'
+                },
+                '.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track': {
+                    backgroundColor: '#FF4844'
+                }
+            }
         }
     }
 })
@@ -105,15 +123,7 @@ const useStyles = makeStyles({
             borderLeft: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
             borderRight: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
             margin: '0 0 0 -4px'
-        },
-        // successfully changes widget headers to red
-        '& .MuiButtonBase-root': {
-            color: '#FF4844 !important'
-        },
-        // successfully changes widget headers to red but any derivation doesn't change widget labels or button colors
-        // '& .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary': {
-        //     color: '#FF4844 !important'
-        // }
+        }
     }
 })
 
@@ -123,7 +133,7 @@ const LightTooltip = withStyles((theme) => ({
         color: colorDetector,
         boxShadow: theme.shadows[8],
         fontSize: 16,
-    },
+    }
 }))(Tooltip);
 
 const columns = [
@@ -385,7 +395,7 @@ const rows = [
 const CustomToolbar = () => {
     const classes = useStyles()
     return (
-        <GridToolbarContainer className={classes.root} style={{padding: '0 10px'}}>
+        <GridToolbarContainer classes={classes.root} style={{padding: '0 10px'}}>
             <GridColumnsToolbarButton className={classes.root}/>
             <GridFilterToolbarButton className={classes.root}/>
             <GridToolbarExport className={classes.root}/>
