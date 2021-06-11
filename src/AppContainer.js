@@ -64,6 +64,9 @@ const theme = createMuiTheme({
                 },
                 '.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track': {
                     backgroundColor: '#FF4844'
+                },
+                '.MuiBadge-badge': {
+                    backgroundColor: '#FF4844'
                 }
             }
         }
@@ -182,6 +185,7 @@ const columns = [
     },
     {
         field: 'codingscape',
+        headerName: 'Codingscape $$$',
         renderHeader: () => (
             <strong>
                 <span>Codingscape $$$</span>
