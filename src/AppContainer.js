@@ -12,13 +12,11 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 
-const isDarkTheme = true
+const isDarkTheme = false
 
 const lores = {
     fontFamily: 'lores12ot-reg',
     src: `url(${LoRes}) format('woff2')`,
-    fontWeight: 'normal',
-    fontStyle: 'normal'
 }
 
 const headerTitle = createMuiTheme({
@@ -36,15 +34,14 @@ const headerTitle = createMuiTheme({
 
 const leawood = {
     fontFamily: 'ITC Leawood W01 Book',
-    src: `url(${Leawood}) format('woff2')`,
-    fontWeight: 'normal',
+    src: `url(${Leawood}) format('woff2')`
 }
 
 
 const theme = createMuiTheme({
     typography: {
         fontFamily: 'ITC Leawood W01 Book',
-        fontSize: 20
+        fontSize: 20,
     },
     overrides: {
         MuiCssBaseline: {
@@ -63,7 +60,6 @@ const theme = createMuiTheme({
                     color: '#FF4844'
                 },
                 '.MuiSwitch-track': {
-                    // color: '#FF4844',
                     backgroundColor: '#000000'
                 },
                 '.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track': {
@@ -120,9 +116,7 @@ const useStyles = makeStyles({
             color: isDarkTheme ? '#ffffff' : '#2B2424'
         },
         '& .Codingscape-column': {
-            borderLeft: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
-            borderRight: isDarkTheme ? '3px solid #ffffff' : '3px solid #2B2424',
-            margin: '0 0 0 -4px'
+            fontWeight: 'bold'
         }
     }
 })
@@ -188,8 +182,11 @@ const columns = [
     },
     {
         field: 'codingscape',
-        headerName: <span style={{fontWeight: 'bold'}}>Codingscape $$$</span>,
-        cellClassName: 'Codingscape-column',
+        renderHeader: () => (
+            <strong>
+                <span>Codingscape $$$</span>
+            </strong>
+        ),
         description:
             <div style={{
                 background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
