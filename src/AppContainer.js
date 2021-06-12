@@ -428,7 +428,7 @@ const AppContainer = () => {
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
-                        <p>See how Codingscape compares. Hover/Tap on values for explanations.</p>
+                        <p>See how Codingscape compares. Hover (tap & hold on mobile) on headers and checkboxes for explanations.</p>
                     </div>
                     <DataGrid
                         className={classes.root}
