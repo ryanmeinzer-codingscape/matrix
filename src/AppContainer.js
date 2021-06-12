@@ -12,6 +12,9 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Leawood from './fonts/7eda0ba7-1b89-4610-b7d3-562b9ad4156a.woff2'
 import LoRes from './fonts/lores12ot-reg-webfont.woff2'
 import React, {useState} from 'react'
+import IconButton from '@material-ui/core/IconButton'
+import ToggleOffOutlinedIcon from '@material-ui/icons/ToggleOffOutlined';
+import ToggleOnOutlinedIcon from '@material-ui/icons/ToggleOnOutlined';
 
 const AppContainer = () => {
 
@@ -432,13 +435,13 @@ const AppContainer = () => {
             padding: '20px 10px 10px 10px', 
             margin: '-10px 0px'
             }}
-        >Custom Development Market</h1>
+            >Custom Development Market <IconButton onClick={() => toggleTheme()}>{isDarkTheme ? < ToggleOnOutlinedIcon /> : <ToggleOffOutlinedIcon />}</IconButton></h1>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div style={{display: 'flex', height: '100vh'}}>
                 <div style={{flexGrow: 1}}>
                     <div className={classes.root} style={{padding: '10px', margin: '-10px 0px'}}>
-                            <p>See how Codingscape compares. Hover (tap & hold on mobile) on headers and checkboxes for explanations. <span><button onClick={() => toggleTheme()}>temporary - toggle dark/light theme</button></span></p>
+                            <p>See how Codingscape compares. Hover (tap & hold on mobile) on headers and checkboxes for explanations.</p>
                     </div>
                     <DataGrid
                         className={classes.root}
