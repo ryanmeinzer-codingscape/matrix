@@ -15,11 +15,14 @@ import React, {useState} from 'react'
 import IconButton from '@material-ui/core/IconButton'
 import ToggleOffOutlinedIcon from '@material-ui/icons/ToggleOffOutlined';
 import ToggleOnOutlinedIcon from '@material-ui/icons/ToggleOnOutlined';
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const AppContainer = () => {
 
     // ToDo - update dark/light theme toggle to inheret from parent on actual website
     // let isDarkTheme = false
+
+    const nonMobile = useMediaQuery('(min-width:480px)')
 
     const [isDarkTheme, setIsDarkTheme] = useState(false)
 
@@ -54,7 +57,7 @@ const AppContainer = () => {
     const theme = createMuiTheme({
         typography: {
             fontFamily: 'ITC Leawood W01 Book',
-            fontSize: 20,
+            fontSize: nonMobile ? 20 : 15,
         },
         overrides: {
             MuiCssBaseline: {
@@ -148,14 +151,12 @@ const AppContainer = () => {
 
     const columns = [
         {
-            field: 'id',
-            hide: true,
-        },
-        {
             field: 'valueTitle',
             headerName: ' ',
             sortable: false,
-            disableColumnSelector: true,
+            // disableColumnSelector: true,
+            disableColumnMenu: true,
+            filterable: false,
             flex: 1.4,
             renderCell: (params) => (
                 <LightTooltip className={'root'} title={params.row.valueTitleDescription} TransitionComponent={Zoom}>
@@ -166,18 +167,19 @@ const AppContainer = () => {
         {
             field: 'internalLabs',
             headerName: 'Internal Labs $$$$$',
+            draggable: true,
             description:
                 <div style={{
                     background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5}}>Internal Technology Labs come with the cost of staffing an entire engineering and design team in house outside of your normal engineering internal organization.</div>,
             sortable: false,
-            flex: 1.1,
+            flex: 1.125,
             type: 'boolean',
             renderCell: (params) => (
                 <LightTooltip title={params.row.internalLabsDescription} TransitionComponent={Zoom}>
                     <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
                 </LightTooltip>
             ),
-            // hide: true
+            hide: nonMobile ? false : true
         },
         {
             field: 'largeConsultancies',
@@ -187,21 +189,21 @@ const AppContainer = () => {
                     background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
                 }}>International Consultancies that have minimum contract sizes for multi year duration contracts. Quality can be high but price can be out of reach for most customers.</div>,
             sortable: false,
-            flex: 1.4,
+            flex: 1.375,
             type: 'boolean',
             renderCell: (params) => (
                 <LightTooltip title={params.row.largeConsultanciesDescription} TransitionComponent={Zoom}>
                     <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
                 </LightTooltip>
             ),
-            // hide: true
+            hide: nonMobile ? false : true
         },
         {
             field: 'codingscape',
             headerName: 'Codingscape $$$',
             renderHeader: () => (
                 <strong>
-                    <span>Codingscape $$$</span>
+                    <span>{nonMobile ? 'Codingscape $$$' : 'Codingscape'}</span>
                 </strong>
             ),
             description:
@@ -225,14 +227,14 @@ const AppContainer = () => {
                     background: isDarkTheme ? '#ffffff' : '#2B2424', color: isDarkTheme ? '#000000' : '#ffffff', fontSize: 16, margin: '-10px', padding: '8px', borderRadius: 5
                 }}>Nearshore Firms specialize in having American Sales people that then repackage contracts for foreign developers. Communication can be better than offshore firms but often quality still suffers with language and timezone barriers.</div>,
             sortable: false,
-            flex: 1.1,
+            flex: 1.125,
             type: 'boolean',
             renderCell: (params) => (
                 <LightTooltip title={params.row.nearshoreFirmsDescription} TransitionComponent={Zoom}>
                     <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
                 </LightTooltip>
             ),
-            // hide: true
+            hide: nonMobile ? false : true
         },
         {
             field: 'offshoreFirms',
@@ -249,7 +251,7 @@ const AppContainer = () => {
                     <span className={'material-icons'}>{params.value ? 'check_box' : 'check_box_outline_blank'}</span>
                 </LightTooltip>
             ),
-            // hide: true
+            hide: nonMobile ? false : true
         }
     ]
 
@@ -346,7 +348,7 @@ const AppContainer = () => {
         },
         {
             id: 7,
-            valueTitle: 'USA Based and Working Hours',
+            valueTitle: 'USA Based / USA Hours',
             valueTitleDescription: "Collaborating in foreign languages and different time zones is hard. Codingscape works in your time zone with American engineers. Our team will work with you as well or better than your internal team.",
             internalLabs: true,
             internalLabsDescription: '',
@@ -446,7 +448,6 @@ const AppContainer = () => {
                     <DataGrid
                         className={classes.root}
                         rows={rows}
-                        row={classes.row}
                         columns={columns}
                         pageSize={10}
                         disableSelectionOnClick={true}
