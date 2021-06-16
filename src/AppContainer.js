@@ -130,7 +130,9 @@ const AppContainer = () => {
             },
             '& .MuiDataGrid-cell': {
                 border: 0,
-                padding: nonMobile ? 16 : 4
+            },
+            '& .MuiSvgIcon-root.MuiDataGrid-iconSeparator': {
+                margin: !nonMobile && '0 6px'
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
@@ -394,7 +396,7 @@ const AppContainer = () => {
         },
         {
             id: 10,
-            valueTitle: 'Data Security and Privacy',
+            valueTitle: nonMobile ? 'Data Security and Privacy' : 'Data Security & Privacy',
             valueTitleDescription: "Codingscape works with some of the largest tech companies in the world and adhere to the utmost data and security standards in collaboration with our clients. We can adhere to any data and privacy rulesets that your organization may have.",
             internalLabs: true,
             internalLabsDescription: '',
