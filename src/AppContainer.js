@@ -57,7 +57,7 @@ const AppContainer = () => {
     const theme = createMuiTheme({
         typography: {
             fontFamily: 'ITC Leawood W01 Book',
-            fontSize: nonMobile ? 20 : 15,
+            fontSize: 16,
         },
         overrides: {
             MuiCssBaseline: {
@@ -129,14 +129,15 @@ const AppContainer = () => {
                 borderBottom: '1px solid #FF4844'
             },
             '& .MuiDataGrid-cell': {
-                border: 0
+                border: 0,
+                padding: nonMobile ? 16 : 8
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
             },
             '& .Codingscape-column': {
-                fontWeight: 'bold'
-            }
+                fontWeight: 'bold',
+            },
         }
     })
 
@@ -433,7 +434,7 @@ const AppContainer = () => {
             src: `url(${LoRes}) format('woff2')`,
             fontWeight: 'normal',
             fontStyle: 'normal',
-            fontSize: 48,
+            fontSize: nonMobile ? 32 : 24,
             padding: '20px 10px 10px 10px', 
             margin: '-10px 0px'
             }}
