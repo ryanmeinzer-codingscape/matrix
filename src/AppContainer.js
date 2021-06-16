@@ -131,11 +131,6 @@ const AppContainer = () => {
             '& .MuiDataGrid-cell': {
                 border: 0,
             },
-            '& .MuiSvgIcon-root.MuiDataGrid-iconSeparator': {
-                // margin: !nonMobile && '0 18px',
-                // padding: !nonMobile && '0 10px',
-                display: !nonMobile && 'none'
-            },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
             },
@@ -208,7 +203,7 @@ const AppContainer = () => {
             headerName: 'Codingscape $$$',
             renderHeader: () => (
                 <strong>
-                    <span>{nonMobile ? 'Codingscape $$$' : 'Codingscape'}</span>
+                    <span>{nonMobile ? 'Codingscape $$$' : ' Codingscape '}</span>
                 </strong>
             ),
             description:
