@@ -203,7 +203,7 @@ const AppContainer = () => {
             headerName: 'Codingscape $$$',
             renderHeader: () => (
                 <strong>
-                    <span>{nonMobile ? 'Codingscape $$$' : ' Codingscape '}</span>
+                    <span style={{display: 'inline-block', padding: '0 20px'}}>{nonMobile ? 'Codingscape $$$' : `${' '} Codingscape`}</span>
                 </strong>
             ),
             description:
