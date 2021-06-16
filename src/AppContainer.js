@@ -130,7 +130,7 @@ const AppContainer = () => {
             },
             '& .MuiDataGrid-cell': {
                 border: 0,
-                padding: nonMobile ? 16 : 0
+                padding: nonMobile ? 16 : 4
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
@@ -304,7 +304,7 @@ const AppContainer = () => {
         },
         {
             id: 4,
-            valueTitle: 'Senior Software Engineers',
+            valueTitle: nonMobile ? 'Senior Software Engineers' : 'Sr. Software Engineers',
             valueTitleDescription: "Working with varied skill level engineers gives varied results. Codingscape matches you with our team of senior engineers that can take projects from start to finish with high quality results.",
             internalLabs: true,
             internalLabsDescription: '',
@@ -334,7 +334,7 @@ const AppContainer = () => {
         },
         {
             id: 6,
-            valueTitle: 'Direct Access to Engineers',
+            valueTitle: nonMobile ? 'Direct Access to Engineers' : 'Direct Access',
             valueTitleDescription: "Codingscape gives you direct access to the engineers working on your project thereby creating accountability and communication to achieve successful results. Working with other firms, you're often unable to communicate directly with the engineers on the project.",
             internalLabs: false,
             internalLabsDescription: '',
