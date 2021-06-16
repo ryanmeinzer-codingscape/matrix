@@ -130,7 +130,7 @@ const AppContainer = () => {
             },
             '& .MuiDataGrid-cell': {
                 border: 0,
-                padding: nonMobile ? 16 : 8
+                padding: nonMobile ? 16 : 4
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
