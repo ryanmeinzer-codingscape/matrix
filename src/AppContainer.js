@@ -133,10 +133,7 @@ const AppContainer = () => {
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
-            },
-            '& .Codingscape-column': {
-                fontWeight: 'bold'
-            },
+            }
         }
     })
 
@@ -157,7 +154,7 @@ const AppContainer = () => {
             // disableColumnSelector: true,
             disableColumnMenu: true,
             filterable: false,
-            flex: 1.4,
+            flex: nonMobile ? 1.4 : 1.2,
             renderCell: (params) => (
                 <LightTooltip className={'root'} title={params.row.valueTitleDescription} TransitionComponent={Zoom}>
                     <span>{params.value}</span>
@@ -202,9 +199,7 @@ const AppContainer = () => {
             field: 'codingscape',
             headerName: 'Codingscape $$$',
             renderHeader: () => (
-                // <strong style={{fontWeight: 'bold', padding: '20px'}}>
-                    <span style={{fontWeight: 'bold', margin: '-10px -10px'}}>{nonMobile ? 'Codingscape $$$' : 'Codingscape'}</span>
-                // </strong>
+                <span style={{fontWeight: 'bold', margin: '-10px -10px'}}>{nonMobile ? 'Codingscape $$$' : 'Codingscape'}</span>
             ),
             description:
                 <div style={{
