@@ -132,13 +132,13 @@ const AppContainer = () => {
                 border: 0,
             },
             '& .MuiSvgIcon-root.MuiDataGrid-iconSeparator': {
-                margin: !nonMobile && '0 6px'
+                margin: !nonMobile && '0 6px 0 8px'
             },
             '& .MuiDataGrid-iconSeparator': {
                 color: isDarkTheme ? '#ffffff' : '#2B2424'
             },
             '& .Codingscape-column': {
-                fontWeight: 'bold',
+                fontWeight: 'bold'
             },
         }
     })
